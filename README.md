@@ -1,91 +1,45 @@
-# Supply_Chain_Analysis-Samsung
+# Samsung Supply Chain: Strategic Analytics Suite
 
+## 🌐 Project Philosophy
+This **Power BI** ecosystem was developed to bridge the visibility gap across Samsung's global supply chain. By synthesizing disparate data streams into a centralized source of truth, this project transitions the supply chain from a reactive cost center to a proactive strategic asset.
 
-## 🚀 Project Overview
-This project is a comprehensive **Samsung Supply Chain Analytics Dashboard** built using **Power BI**. It provides an end-to-end view of the supply chain lifecycle, integrating data from Sales, Production, Procurement, Shipment, and Supplier Performance to drive data-driven decision-making.
+## 🛠 Technical Architecture
+The backend is built on a high-performance **Star Schema** data model designed for low-latency filtering across millions of records.
 
-The dashboard is designed to:
-* **Track key KPIs** in real-time.
-* **Identify inefficiencies** across the production and logistics value chain.
-* **Improve operational decisions** through interactive data exploration.
-* **Optimize performance** by visualizing trends and outliers.
-
----
-
-## 📌 Dashboard Pages
-
-### 🟦 1. Sales Overview
-* **Financial Metrics:** Gross Revenue, Net Revenue, Profit, Profit Margin %, and Discount Rate %.
-* **Trends:** Monthly Sales Trend and Product-wise Sales Analysis.
-
-### 🟩 2. Production Analysis
-* **Volume & Quality:** Total Production Quantity, Defective Units, and Defect Rate %.
-* **Efficiency:** Production Efficiency and Batch-wise Production Analysis.
-* **Facility:** Performance benchmarking across different manufacturing units.
-
-### 🟨 3. Procurement Insights
-* **Cost Analysis:** Total Procurement Cost and Cost per Unit.
-* **Efficiency:** Average Lead Time and Purchase Order Analysis.
-* **Quality:** Supplier Quality Score integration.
-
-### 🟥 4. Shipment & Delivery
-* **Reliability:** On-Time Delivery % and Delayed Shipments.
-* **Logistics Costs:** Cost per Shipment and Cost per Kg.
-* **Root Cause:** Delivery Trends and Delay Reason Analysis.
-
-### 🟪 5. Supplier Performance
-* **Scorecards:** Supplier Quality Score and Average Lead Time.
-* **Segmentation:** Supplier Tier Analysis and Country-wise Distribution.
-* **Ranking:** Top & Bottom performing suppliers.
+* **Logic Layer:** Advanced **DAX** implementation for time-intelligence (YoY Growth, Rolling Averages) and dynamic KPI scaling.
+* **Data Orchestration:** Managed through Power Query for automated ETL, ensuring data integrity from procurement to final shipment.
+* **Relational Schema:** Five central **Fact Tables** (`Sales`, `Production`, `Procurement`, `Shipment`, `Inventory`) linked to shared **Dimension Tables** for seamless cross-filtering.
 
 ---
 
-## 📊 Key KPIs Tracked
-| Category | KPI |
-| :--- | :--- |
-| **Sales** | Gross Revenue, Net Revenue, Profit, Profit Margin %, Discount Rate % |
-| **Operations** | Cost Ratio %, Production Efficiency %, Defect Rate % |
-| **Logistics** | On-Time Delivery %, Cost per Kg |
+## 📈 Executive Insights & Modules
+
+### 1. Revenue & Market Dynamics (Sales)
+Focuses on the financial health of the supply chain. Beyond high-level revenue tracking, it evaluates the **elasticity of profit margins** against discount strategies and monthly demand shifts.
+
+### 2. Operational Integrity (Production)
+A deep dive into manufacturing health. This module isolates **Defect Rate %** and **Batch Efficiency** to pinpoint specific facilities or production lines that require process optimization.
+
+### 3. Strategic Sourcing (Procurement)
+Evaluates the efficiency of the "upstream" chain. It tracks **Vendor Lead Times** and **Cost-per-Unit** volatility to ensure procurement maintains a high Supplier Quality Score.
+
+### 4. Fulfillment & Logistics (Shipment)
+Analyzes the "last mile" of the supply chain. Key focus areas include **On-Time Delivery (OTD)** metrics and a **Delay Reason Analysis** to distinguish between internal bottlenecks and external logistics failures.
+
+### 5. Vendor Ecosystem (Supplier Performance)
+A comprehensive scorecard system that tiers suppliers based on reliability and geographical distribution, ensuring a diversified and low-risk sourcing strategy.
 
 ---
 
-## 🛠 Tools & Technologies
-* **Power BI:** For data visualization and dashboard creation.
-* **DAX (Data Analysis Expressions):** Used for complex measures and calculated columns.
-* **Data Modeling:** Implemented a **Star Schema** for optimized query performance.
-* **Power Query:** For ETL (Extract, Transform, Load) processes.
+## 🔬 Core Metric Glossary
+* **Profitability:** Net Revenue, Margin %, and Cost Ratios.
+* **Quality Control:** Defect Rates and Supplier Quality Grades.
+* **Agility:** Lead Times and On-Time Delivery performance.
+* **Freight Efficiency:** Cost per Kg and Shipment Volume trends.
 
 ---
 
-## 🗂 Dataset Structure
-The project utilizes a robust star schema with the following tables:
-
-### Fact Tables
-* `fact_inventory`
-* `fact_sales`
-* `fact_production`
-* `fact_procurement`
-* `fact_shipment`
-
-### Dimension Tables
-* `dim_facility`
-* `dim_product`
-* `dim_customer`
-* `dim_supplier`
-* `dim_date`
-
----
-
-## 💡 Key Insights Derived
-* **Production:** Identified specific production batches with abnormally high defect rates, suggesting equipment maintenance needs.
-* **Supplier Impact:** A direct correlation was found between low supplier quality scores and delivery performance delays.
-* **Profitability:** Discount strategies were found to have a disproportionately high impact on net profit margins in certain regions.
-* **Logistics:** Shipment delays are primarily driven by specific logistics inefficiencies rather than production bottlenecks.
-
----
-
-## 📈 Future Improvements
-* **Forecasting:** Integrate Machine Learning (Python/R) for demand and inventory forecasting.
-* **Real-time Integration:** Move from scheduled refreshes to DirectQuery for live data streams.
-* **Advanced Analytics:** Implement drill-through pages for granular root-cause analysis.
-* **Alerting:** Set up Power BI KPI alerts to notify stakeholders when defect rates or delays exceed thresholds.
+## 🚀 The Roadmap
+* **Predictive Layer:** Implementing ML-driven demand forecasting to reduce inventory carrying costs.
+* **Live Stream:** Shifting to DirectQuery for real-time warehouse monitoring.
+* **Automated Governance:** Deployment of Data Alerts to notify stakeholders the moment a KPI (like Defect Rate) exceeds the tolerance threshold.
